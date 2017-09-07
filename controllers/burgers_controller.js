@@ -11,7 +11,7 @@ router.get("/", function(req, res) {
     var hbsObject = {
       burgers: data
     };
-    console.log(hbsObject);
+    //console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
@@ -24,19 +24,12 @@ router.post("/", function(req, res) {
   ], function() {
     res.redirect("/");
   });
-  // burger.insertOne([
-  //   "burger_name", "devoured"
-  // ], [
-  //   req.body.burgerNameHtml, req.body.devouredHtml
-  // ], function() {
-  //   res.redirect("/");
-  // });
 });
 
 router.put("/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
-  console.log("condition", condition);
+  //console.log("condition", condition);
 
   burger.updateOne({
     devoured: req.body.devouredHtml
@@ -44,14 +37,6 @@ router.put("/:id", function(req, res) {
     res.redirect("/");
   });
 });
-
-// router.delete("/:id", function(req, res) {
-//   var condition = "id = " + req.params.id;
-
-//   cat.delete(condition, function() {
-//     res.redirect("/");
-//   });
-// });
 
 // Export routes for server.js to use.
 module.exports = router;

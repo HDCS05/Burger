@@ -1,7 +1,6 @@
 li {
   padding: 5px;
   margin: 5px;
-  background: #faebd7;
 }
 
 .label {
@@ -11,9 +10,62 @@ li {
 .create-update-form {
   padding: 5px;
   margin: 5px;
-  background: aqua;
 }
 
 .form-group {
   margin-bottom: 5px;
+}
+
+h1 {
+	font-family: 'Permanent Marker', cursive;
+	text-align: center;
+	color: darkgreen;
+	text-shadow: -1px 0 lime, 0 1px lime, 1px 0 lime, 0 -1px lime;
+}
+
+h2 {
+	font-family: 'Permanent Marker', cursive;
+	text-align: center;
+	color: orangered;
+	text-shadow: -1px 0 orange, 0 1px orange, 1px 0 orange, 0 -1px orange;
+}
+
+.letterlobster {
+	font-family: 'Lobster', cursive;
+	text-align: center;
+	color: white;
+	font-size: 2em;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+body {
+	background-image: url("/assets/img/burger9.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.ccolor1{
+	font-size: 2em;
+	color: yellow;
+	text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+	font-family: 'Pacifico', cursive;
+}
+
+.ccolor2{
+	font-size: 2em;
+	color: yellowgreen;
+	text-shadow: -1px 0 green, 0 1px green, 1px 0 green, 0 -1px green;
+	font-family: 'Pacifico', cursive;
+}
+
+.ccolor3 {
+	font-size: 2em;
+	font-family: 'Permanent Marker', cursive;
+	color: orangered;
+	text-shadow: -1px 0 orange, 0 1px orange, 1px 0 orange, 0 -1px orange;
+}
+
+.fsize1 {
+	clear:left;
+	width: 300px;
 }

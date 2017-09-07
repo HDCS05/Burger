@@ -1,56 +1,60 @@
-<h1>Burgers!</h1>
 
-<h2>Burgers Available!</h2>
+<div class="container fluid">
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+			<h1>Eat-Da-Burger!</h1>
+			<div class="row">
 
-<ul>
-  {{#each burgers}}
-    {{#unless this.devoured}}
-      <li>
-        {{this.id}} {{this.burger_name}}
+				<div class="col-md-7">
+					<h2>Burgers Available!</h2>
+					<ul>
+						{{#each burgers}}
+							{{#unless this.devoured}}
+								<li>
+									<form class="form-inline" action="/{{this.id}}?_method=PUT" method="POST">
+										<div class="form-group ccolor2">
+											<label class="fsize1">{{this.id}}. {{this.burger_name}}</label>
+											<input type="hidden" name="devouredHtml" value="true">
+										</div>
+										<button type="submit" class="btn btn-success" style="margin-left:15px">Devour It!</button>
+									</form>
+								</li>
+							{{/unless}}
+						{{/each}}
+					</ul>
+				</div>
+			
+				<div class="col-md-5">
+					<h2>Burgers Devoured</h2>
+					<ul>
+						{{#each burgers}}
+							{{#if this.devoured}}
+								<li>
+									<label class="ccolor1">
+										{{this.id}}. {{this.burger_name}}
+									</label>
+								</li>
+							{{/if}}
+						{{/each}}
+					</ul>
+				</div>
 
-        <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="devouredHtml" value="true">
-          <button type="submit">Devour It!</button>
-        </form>
-
-        {{!-- {{> cats/delete-cat}} --}}
-      </li>
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Burgers Devoured</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if this.devoured}}
-      <li>
-        {{this.id}} {{this.burger_name}}
-
-{{!--         <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="devoured" value="false">
-          <button type="submit">WAKE UP!</button>
-        </form> --}}
-
-        {{!-- {{> cats/delete-cat}} --}}
-      </li>
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-update-form" action="/" method="POST">
-
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="burgerNameHtml">
-  </div>
-
-{{!--   <div class="form-group">
-    <label for="slee">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
-  </div> --}}
-
-  <button type="submit">Add burger</button>
-</form>
+			</div>
+			<h2>Add a Burger</h2>
+			<form class="form-inline text-center create-update-form" action="/" method="POST">
+				<div class="form-group ccolor3">
+					<label for="ca">Burger Name:</label>
+					<input class="text-center" type="text" id="ca" name="burgerNameHtml" style="margin-right:15px">
+				</div>
+				<button type="submit" class="btn btn-danger">Add burger</button>
+			</form>
+			<br/>
+			<div class="row">
+				<div class="container-fluid letterlobster">
+					Copyright &copy; 2017 Hilton DCS
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>

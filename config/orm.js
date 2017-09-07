@@ -46,7 +46,7 @@ var orm = {
     queryString += printQuestionMarks(vals.length);
     queryString += ") ";
 
-    console.log("Create Query " + queryString);
+    //console.log("Create Query " + queryString);
 
     connection.query(queryString, vals, function(err, result) {
       if (err) {
@@ -64,7 +64,7 @@ var orm = {
     queryString += " WHERE ";
     queryString += condition;
 
-    console.log("Update Query " + queryString);
+    //console.log("Update Query " + queryString);
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
@@ -72,20 +72,7 @@ var orm = {
 
       cb(result);
     });
-  }//,
-  // delete: function(table, condition, cb) {
-  //   var queryString = "DELETE FROM " + table;
-  //   queryString += " WHERE ";
-  //   queryString += condition;
-
-  //   connection.query(queryString, function(err, result) {
-  //     if (err) {
-  //       throw err;
-  //     }
-
-  //     cb(result);
-  //   });
-  // }
+  }
 };
 
 // Export the orm object for the model (burger.js).
